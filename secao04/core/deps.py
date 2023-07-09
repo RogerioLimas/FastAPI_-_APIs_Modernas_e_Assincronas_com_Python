@@ -1,10 +1,11 @@
-from typing import AsyncGenerator
+from typing import Generator
 
 from sqlalchemy.ext.asyncio import AsyncSession
-from common.database import Session
+
+from core.database import Session
 
 
-async def get_session() -> AsyncGenerator:
+async def get_session() -> Generator:
     session: AsyncSession = Session()
 
     try:
